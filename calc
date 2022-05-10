@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="css/master1.css">
+  <link rel="stylesheet" href="css/calc.css">
+  <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+  <script type="text/javascript" src="js/calc.1.5.2.js"></script>
+  <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+  <title>Калькулятор</title>
+</head>
+
+<body>
+  <div class="header">
+    <div class="pos1">
+      <a href="index.html">
+        <img src="img/logo.svg" alt="Лого">
+      </a>
+    </div>
+    <div class="pos2">
+      ОБЩЕСТВО С ОГРАНИЧЕННОЙ<br>ОТВЕСТВЕННОСТЬЮ<br>
+      <a>ТРАНСКАРГО-А</a>
+    </div>
+    <div class="pos3">
+      +7 (926) 916-60-57<br>
+      +7 (968) 026-11-99<br>
+      +7 (968) 464-21-29<br>
+      trcargo-a@mail.ru<br>
+    </div>
+  </div>
+  <nav>
+    <!--Меню-->
+    <ul>
+      <li><a href="index.html">Цены</a></li>
+      <li><a href="calc">Калькулятор</a></li>
+      <li><a href="#">Документы</a>
+        <ul>
+          <li><a href="img/docs/EGRUL.png" target="_blank">ЕГРЮЛ</a></li>
+          <li><a href="img/docs/rekveziti.png" target="_blank">Реквизиты</a></li>
+          <li><a href="img/docs/svidetelstvo.png" target="_blank">Свидетельство</a></li>
+          <li><a href="img/docs/DOGOVOR.docx" target="_blank">Договор</a></li>
+          <li><a href="img/docs/USTAV.pdf" target="_blank">Устав</a></li>
+        </ul>
+      </li>
+      <li><a href="map">Схема проезда</a></li>
+      <li class=red><a href="https://trcargo-a.ru/sings">Опасный груз</a></li>
+      <li><a href="zayvka">Онлайн заявка</a></li>
+    </ul>
+  </nav>
+  <div class="calc" id="jCalcForm">
+    <form action="/zayavka" method="post" enctype="multipart/form-data">
+      <input type="hidden" name="form_id" value="calc">
+      <div class="name">
+        Онлайн калькулятор
+      </div>
+
+      <div class="form">
+
+        <div class="field" align=left>
+          <label for="calc_route">Маршрут:</label>
+
+          <select id="calc_route" name="route">
+            <option value="1" selected="selected">Москва-Усинск</option>
+            <option value="2">Усинск-Москва</option>
+            <option value="3">Москва-Печора</option>
+            <option value="4">Печора-Москва</option>
+            <option value="5">Москва-Нарьян Мар</option>
+          </select>
+        </div>
+
+        <div class="weight">
+          <b> </b>
+          <div class="weight_item" align=left>
+            <label>Кол-во мест:</label>
+            <input type="text" name="qty[]" class="jQty" value="1">
+            <!--select name="sizetype[]">
+                <option value="1" selected="selected">Габариты одного места</option>
+                <option value="2">Габариты всех мест</option>
+              </select-->
+            <label>Вес, кг:</label>
+            <input type="text" name="weight[]" class="jWeight w80" value="1">
+            <label>Объем, м<sup>3</sup>:</label>
+            <input type="text" name="volume[]" class="jVolume w80" value="0.01">
+            <span class="jWeightRemove remove"></span>
+          </div>
+          <!--button type="button" id="jWeightAdd" class="btn btn-sm">+ добавить строку</button-->
+        </div>
+        <div class="buttons">
+          <button type="button" id="jCalc" class="btn btn-lg">Рассчитать</button>
+          <!--button type="submit" id="jCalcSubmit" class="btn btn-blue">Оформить заявку &rarr;</button-->
+        </div>
+      </div>
+    </form>
+  </div>
+</body>
+
+</html>
